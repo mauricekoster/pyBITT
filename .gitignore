@@ -15,6 +15,11 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
+########
+## VIM
+########
+
+*.swp
 
 #############
 ## Python
