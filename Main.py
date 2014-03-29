@@ -1,4 +1,4 @@
-from PySide import QtCore, QtGui, QtWebKit, QtUiTools
+from PySide import QtCore, QtGui, QtUiTools
 import os, sys
 from Project import Project
 
@@ -33,10 +33,10 @@ class MainApp(QtCore.QObject):
         
         # Load the UI from a Qt designer file.
         loader = QtUiTools.QUiLoader()
-        file = QtCore.QFile(self.__resource("main_window.ui"))
-        file.open(QtCore.QFile.ReadOnly)
-        self.ui = loader.load(file, None)
-        file.close() 
+        uifile = QtCore.QFile(self.__resource("main_window.ui"))
+        uifile.open(QtCore.QFile.ReadOnly)
+        self.ui = loader.load(uifile, None)
+        uifile.close() 
 
         action = self.ui.findChild(QtGui.QAction,"actionOpen_project")
         action.triggered.connect(self.openFile)
