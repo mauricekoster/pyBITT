@@ -1,4 +1,4 @@
-from PySide import QtSql
+from PyQt4 import QtSql
 
 from Configuration import Configuration
 from Datasources import Datasources
@@ -129,7 +129,7 @@ class Project(object):
 
         if len(other)==0:
             raise MissingPKException("Missing other values")
- 
+
         return (pk, other)
 
     def _construct_create_statement(self, table):
@@ -141,7 +141,7 @@ class Project(object):
                 if fld[3]:
                     s += " PRIMARY KEY"
 
-            s += "," 
+            s += ","
 
         s = s[:-1] + ")"
         return s
@@ -150,5 +150,3 @@ class Project(object):
 
 def getProject(filename):
     return Project(filename)
-
-

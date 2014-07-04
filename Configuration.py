@@ -1,7 +1,7 @@
-from PySide import QtSql
+from PyQt4 import QtSql
 
 class Configuration(object):
-   
+
 
     def __init__(self, project):
         self.project = project
@@ -25,4 +25,3 @@ class Configuration(object):
 
     def setItem(self, key, value):
         self.project.storeRecord('config', { 'key' : key, 'value': value } )
-

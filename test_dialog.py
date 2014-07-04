@@ -1,16 +1,14 @@
 import sys
-from PySide import QtCore, QtGui
-from PySide.QtUiTools import QUiLoader
+from PyQt4 import QtCore, QtGui, uic
 
 class MyForm(QtCore.QObject):
     def __init__(self, dialog_filename="dialog.ui", parent=None):
         super(MyForm,self).__init__()
 
-        loader = QUiLoader()
         print "fn: %s" % dialog_filename
         file = QtCore.QFile(dialog_filename)
         file.open(QtCore.QFile.ReadOnly)
-        self.ui = loader.load(file, None)
+        self.ui = uic.loadUi(file, None)
         file.close()
 
     def show(self):
